@@ -2,7 +2,7 @@
 
 namespace Demo.Testes
 {
-    public class AssertStringsTestes
+    public class AssertStringsTests
     {
         [Fact]
         public void StringsTools_UnirNomes_RetornarNomeCompleto()
@@ -59,7 +59,7 @@ namespace Demo.Testes
         {
             var stringsTools = new StringsTools();
 
-            var nomeCompleto = stringsTools.Unir("Wellington", "Carvalho");
+            var nomeCompleto = stringsTools.Unir("Wellington", "Carvalho Silva");
 
             Assert.Matches("[A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+", nomeCompleto);
         }

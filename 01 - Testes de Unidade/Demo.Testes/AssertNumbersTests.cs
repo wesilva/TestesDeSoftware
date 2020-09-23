@@ -2,7 +2,7 @@
 
 namespace Demo.Testes
 {
-    public class AssertNumbersTestes
+    public class AssertNumbersTests
     {
         [Fact]
         public void Calculadora_Somar_DeveSerIgual()

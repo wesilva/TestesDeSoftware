@@ -2,7 +2,7 @@
 
 namespace Demo.Testes
 {
-    public class CalculadoraTestes
+    public class CalculadoraTests
     {
         [Fact]
         public void Calculadora_Somar_RetornarValorSoma()
