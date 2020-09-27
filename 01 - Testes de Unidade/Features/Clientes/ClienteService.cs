@@ -1,53 +1,66 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using MediatR;
 
 namespace Features.Clientes
 {
     public class ClienteService : IClienteService
     {
         private readonly IClienteRepository _clienteRepository;
-        //private readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
-        public ClienteService(IClienteRepository clienteRepository
-                                //,IMediator mediator
-                                )
+        public ClienteService(IClienteRepository clienteRepository,
+                              IMediator mediator)
         {
             _clienteRepository = clienteRepository;
-            //_mediator = _mediator;
+            _mediator = _mediator;
         }
 
         public IEnumerable<Cliente> ObterTodosAtivos()
         {
-            throw new System.NotImplementedException();
+            return _clienteRepository.ObterTodos().Where(c => c.Ativo);
         }
 
         public void Adicionar(Cliente cliente)
         {
-            if (!cliente.EhValido()) return;
+            if (!cliente.EhValido()) 
+                return;
 
-            //_clienteRepository.Adicionar(cliente);
-            //_mediator.Publish(new ClienteEmailNotification("admin@me.com", cliente.Email));
+            _clienteRepository.Adicionar(cliente);
+            _mediator.Publish(new ClienteEmailNotification("well@me.com", cliente.Email, "Olá", "Bem vindo!"));
         }
 
         public void Atualizar(Cliente cliente)
         {
-            if (!cliente.EhValido()) return;
-            throw new System.NotImplementedException();
-        }
+            if (!cliente.EhValido()) 
+                return;
 
-        public void Remover(Cliente cliente)
-        {
-            throw new System.NotImplementedException();
+            _clienteRepository.Atualizar(cliente);
+            _mediator.Publish(new ClienteEmailNotification("well@me.com", cliente.Email, "Mudanças", "Dê uma olhada!"));
         }
 
         public void Inativar(Cliente cliente)
         {
-            if (!cliente.EhValido()) return;
-            throw new System.NotImplementedException();
+            if (!cliente.EhValido())
+                return;
+
+            cliente.Inativar();
+            _clienteRepository.Atualizar(cliente);
+            _mediator.Publish(new ClienteEmailNotification("well@me.com", cliente.Email, "Até breve", "Até mais tarde!"));
+        }
+
+        public void Remover(Cliente cliente)
+        {
+            if (!cliente.EhValido()) 
+                return;
+
+            _clienteRepository.Atualizar(cliente);
+            _mediator.Publish(new ClienteEmailNotification("well@me.com", cliente.Email, "Adeus", "Tenha um boa jornada!"));
         }
 
         public void Dispose()
         {
-            //_clienteRepository.Dispose();
+            _clienteRepository.Dispose();
         }
     }
 }
