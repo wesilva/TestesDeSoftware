@@ -13,7 +13,7 @@ namespace Features.Clientes
                               IMediator mediator)
         {
             _clienteRepository = clienteRepository;
-            _mediator = _mediator;
+            _mediator = mediator;
         }
 
         public IEnumerable<Cliente> ObterTodosAtivos()
