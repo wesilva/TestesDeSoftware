@@ -1,0 +1,372 @@
+<Playlist Version="2.0">
+  <Rule Name="Includes" Match="Any">
+    <Rule Match="All">
+      <Property Name="Solution" />
+      <Rule Match="Any">
+        <Rule Match="All">
+          <Property Name="Project" Value="Demo.Tests" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="Demo.Testes" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="AssertNullBoolTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertNullBoolTests.Funcionario_Apelido_NaoDeveTerApelido" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertNullBoolTests.Funcionario_Apelido_NaoDeveTerApelido" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertNullBoolTests.Funcionario_Nome_NaoDeveSerNuloOuVazio" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertNullBoolTests.Funcionario_Nome_NaoDeveSerNuloOuVazio" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="AssertNumbersTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertNumbersTests.Calculadora_Somar_DeveSerIgual" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertNumbersTests.Calculadora_Somar_DeveSerIgual" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertNumbersTests.Calculadora_Somar_NaoDeveSerIgual" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertNumbersTests.Calculadora_Somar_NaoDeveSerIgual" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="AssertStringsTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_DeveAcabarCom" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_DeveAcabarCom" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_DeveComecarCom" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_DeveComecarCom" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_DeveConterTrecho" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_DeveConterTrecho" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_DeveIgnorarCase" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_DeveIgnorarCase" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_RetornarNomeCompleto" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_RetornarNomeCompleto" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_ValidarExpressaRegular" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertStringsTests.StringsTools_UnirNomes_ValidarExpressaRegular" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="AssertingCollectionsTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertingCollectionsTests.Funcionario_Habilidades_JuniorDevePossuirHabilidadeBasica" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingCollectionsTests.Funcionario_Habilidades_JuniorDevePossuirHabilidadeBasica" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertingCollectionsTests.Funcionario_Habilidades_JuniorNaoDevePossuirHabilidadeAvancada" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingCollectionsTests.Funcionario_Habilidades_JuniorNaoDevePossuirHabilidadeAvancada" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertingCollectionsTests.Funcionario_Habilidades_NaoDevePossuirHabilidadesVazias" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingCollectionsTests.Funcionario_Habilidades_NaoDevePossuirHabilidadesVazias" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertingCollectionsTests.Funcionario_Habilidades_SeniorDevePossuirTodasHabilidades" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingCollectionsTests.Funcionario_Habilidades_SeniorDevePossuirTodasHabilidades" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="AssertingExceptionsTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertingExceptionsTests.Calculadora_Dividir_DeveRetornarErroDivisaoPorZero" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingExceptionsTests.Calculadora_Dividir_DeveRetornarErroDivisaoPorZero" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertingExceptionsTests.Funcionario_Salario_DeveRetornarErroSalarioInferiorPermitido" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingExceptionsTests.Funcionario_Salario_DeveRetornarErroSalarioInferiorPermitido" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="AssertingObjectTypesTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertingObjectTypesTests.FuncionarioFactory_Criar_DeveRetornarTipoDerivadoPessoa" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingObjectTypesTests.FuncionarioFactory_Criar_DeveRetornarTipoDerivadoPessoa" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertingObjectTypesTests.FuncionarioFactory_Criar_DeveRetornarTipoFuncionario" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingObjectTypesTests.FuncionarioFactory_Criar_DeveRetornarTipoFuncionario" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="AssertingRangesTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.AssertingRangesTests.Funcionario_Salario_FaixasSalariaisDevemRespeitarNivelProfissional" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingRangesTests.Funcionario_Salario_FaixasSalariaisDevemRespeitarNivelProfissional(salario: 15000)" />
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingRangesTests.Funcionario_Salario_FaixasSalariaisDevemRespeitarNivelProfissional(salario: 1500)" />
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingRangesTests.Funcionario_Salario_FaixasSalariaisDevemRespeitarNivelProfissional(salario: 700)" />
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingRangesTests.Funcionario_Salario_FaixasSalariaisDevemRespeitarNivelProfissional(salario: 2000)" />
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingRangesTests.Funcionario_Salario_FaixasSalariaisDevemRespeitarNivelProfissional(salario: 7500)" />
+                        <Property Name="DisplayName" Value="Demo.Testes.AssertingRangesTests.Funcionario_Salario_FaixasSalariaisDevemRespeitarNivelProfissional(salario: 8000)" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="CalculadoraTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.CalculadoraTests.Calculadora_Somar_RetornarValorSoma" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.CalculadoraTests.Calculadora_Somar_RetornarValorSoma" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Demo.Testes.CalculadoraTests.Calculadora_Somar_RetornarValoresSomaCorretos" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Demo.Testes.CalculadoraTests.Calculadora_Somar_RetornarValoresSomaCorretos(valor1: 10, valor2: 52, totalEsperado: 62)" />
+                        <Property Name="DisplayName" Value="Demo.Testes.CalculadoraTests.Calculadora_Somar_RetornarValoresSomaCorretos(valor1: 1, valor2: 1, totalEsperado: 2)" />
+                        <Property Name="DisplayName" Value="Demo.Testes.CalculadoraTests.Calculadora_Somar_RetornarValoresSomaCorretos(valor1: 2, valor2: 5, totalEsperado: 7)" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+        <Rule Match="All">
+          <Property Name="Project" Value="Features.Tests" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="Features.Tests" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="ClienteBogusTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteBogusTests.Cliente_NovoCliente_DeveEstarInvalido" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Novo Cliente Inválido" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="ClienteFluentAssertionsTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteFluentAssertionsTests.Cliente_NovoCliente_DeveEstarValido" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Novo Cliente Válido" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="ClienteServiceAutoMockerFixtureTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteServiceAutoMockerFixtureTests.ClienteService_Adicionar_DeveExecutarComSucesso" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Adicionar Cliente com Sucesso" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteServiceAutoMockerFixtureTests.ClienteService_ObterTodosAtivos_DeveRetornarApenasClientesAtivos" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Obter Clientes Ativos" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="ClienteServiceAutoMockerTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteServiceAutoMockerTests.ClienteService_Adicionar_DeveExecutarComSucesso" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Adicionar Cliente com Sucesso" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteServiceAutoMockerTests.ClienteService_Adicionar_DeveFalharDevidoClienteInvalido" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Adicionar Cliente com Falha" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="ClienteServiceFluentAssertionTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteServiceFluentAssertionTests.ClienteService_Adicionar_DeveExecutarComSucesso" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Adicionar Cliente com Sucesso" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteServiceFluentAssertionTests.ClienteService_Adicionar_DeveFalharDevidoClienteInvalido" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Adicionar Cliente com Falha" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteServiceFluentAssertionTests.ClienteService_ObterTodosAtivos_DeveRetornarApenasClientesAtivos" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Obter Clientes Ativos" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="ClienteServiceTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteServiceTests.ClienteService_Adicionar_DeveExecutarComSucesso" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Adicionar Cliente com Sucesso" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteServiceTests.ClienteService_Adicionar_DeveFalharDevidoClienteInvalido" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Adicionar Cliente com Falha" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteServiceTests.ClienteService_ObterTodosAtivos_DeveRetornarApenasClientesAtivos" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Obter Clientes Ativos" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="ClienteTesteValido" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteTesteValido.Cliente_NovoCliente_DeveEstarValido" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Novo Cliente Válido" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="ClienteTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteTests.Cliente_NovoCliente_DeveEstarInvalido" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Novo Cliente Inválido" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.ClienteTests.Cliente_NovoCliente_DeveEstarValido" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Novo Cliente Válido" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="OrdemTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.OrdemTests.Teste01" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Teste 01" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.OrdemTests.Teste02" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Teste 02" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.OrdemTests.Teste03" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Teste 03" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.OrdemTests.Teste04" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Teste 04" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+                <Rule Match="All">
+                  <Property Name="Class" Value="TesteNaoPassandoPorMotivoEspecifico" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Features.Tests.TesteNaoPassandoPorMotivoEspecifico.Teste_NaoEstaPassando_VersaoNovaNaoCompativel" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Novo Cliente 2.0" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+      </Rule>
+    </Rule>
+  </Rule>
+</Playlist>
