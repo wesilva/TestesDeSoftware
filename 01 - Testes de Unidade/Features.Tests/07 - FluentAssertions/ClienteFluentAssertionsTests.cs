@@ -1,6 +1,6 @@
-﻿using Features.Clientes;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Features.Tests
 {
@@ -8,12 +8,13 @@ namespace Features.Tests
     public class ClienteFluentAssertionsTests
     {
         private readonly ClienteTestsAutoMockerFixture _clienteTestsAutoMockerFixture;
-        private readonly ClienteService _clienteService;
+        private readonly ITestOutputHelper _outputHelper;
 
-        public ClienteFluentAssertionsTests(ClienteTestsAutoMockerFixture clienteTestsAutoMockerFixture)
+        public ClienteFluentAssertionsTests(ClienteTestsAutoMockerFixture clienteTestsAutoMockerFixture,
+            ITestOutputHelper outputHelper)
         {
             _clienteTestsAutoMockerFixture = clienteTestsAutoMockerFixture;
-            _clienteService = _clienteTestsAutoMockerFixture.ObterClienteService();
+            _outputHelper = outputHelper;
         }
 
         [Fact(DisplayName = "Novo Cliente Válido")]
@@ -44,6 +45,7 @@ namespace Features.Tests
 
             result.Should().BeFalse();
             cliente.ValidationResult.Errors.Should().HaveCountGreaterOrEqualTo(1, "Deve possuir erros de validação");
+            _outputHelper.WriteLine($"Foram encontrados {cliente.ValidationResult.Errors.Count} erros nesta validação");
         }
     }
 }
