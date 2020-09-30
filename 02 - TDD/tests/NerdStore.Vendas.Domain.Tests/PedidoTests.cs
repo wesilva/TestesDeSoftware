@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Xunit;
 namespace NerdStore.Vendas.Domain.Tests
 {
@@ -8,12 +9,30 @@ namespace NerdStore.Vendas.Domain.Tests
         [Trait("Categoria", "Pedido Tests")]
         public void AdicionarItemPedido_NovoPedido_DeveAtualizarValor()
         {
-            var pedido = new Pedido();
+            var pedido = Pedido.PedidoFactory.NovoPedidoRascunho(Guid.NewGuid());
             var pedidoItem = new PedidoItem(Guid.NewGuid(), "Produto Teste", 5, 500);
 
             pedido.AdicionarItem(pedidoItem);
 
             Assert.Equal(2500, pedido.ValorTotal);
+        }
+
+        [Fact(DisplayName = "Adicionar Item Pedido Existente")]
+        [Trait("Categoria", "Pedido Tests")]
+        public void AdicionarItemPedido_ItemExistente_DeveIncrementarUnidadesSomarValores()
+        {
+            var pedido = Pedido.PedidoFactory.NovoPedidoRascunho(Guid.NewGuid());
+            var produtoId = Guid.NewGuid();
+            var pedidoItem = new PedidoItem(produtoId, "Produto Teste", 5, 500);
+            pedido.AdicionarItem(pedidoItem);
+            var pedidoItem2 = new PedidoItem(produtoId, "Produto Teste", 1, 500);
+
+            pedido.AdicionarItem(pedidoItem2);
+
+            Assert.Equal(3000, pedido.ValorTotal);
+            Assert.Equal(1, pedido.PedidoItems.Count);
+            Assert.Equal(6, pedido.PedidoItems.FirstOrDefault(p => p.ProdutoId == produtoId).Quantidade);
+
         }
     }
 }
