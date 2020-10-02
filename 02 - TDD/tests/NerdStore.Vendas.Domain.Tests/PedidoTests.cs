@@ -8,7 +8,7 @@ namespace NerdStore.Vendas.Domain.Tests
     public class PedidoTests
     {
         [Fact(DisplayName = "Adicionar Item Novo Pedido")]
-        [Trait("Categoria", "Pedido Tests")]
+        [Trait("Categoria", "Vendas - Pedido")]
         public void AdicionarItemPedido_NovoPedido_DeveAtualizarValor()
         {
             var pedido = Pedido.PedidoFactory.NovoPedidoRascunho(Guid.NewGuid());
@@ -20,7 +20,7 @@ namespace NerdStore.Vendas.Domain.Tests
         }
 
         [Fact(DisplayName = "Adicionar Item Pedido Existente")]
-        [Trait("Categoria", "Pedido Tests")]
+        [Trait("Categoria", "Vendas - Pedido")]
         public void AdicionarItemPedido_ItemExistente_DeveIncrementarUnidadesSomarValores()
         {
             var pedido = Pedido.PedidoFactory.NovoPedidoRascunho(Guid.NewGuid());
@@ -38,7 +38,7 @@ namespace NerdStore.Vendas.Domain.Tests
         }
 
         [Fact(DisplayName = "Adicionar Item Pedido acima do permitido")]
-        [Trait("Categoria", "Pedido Tests")]
+        [Trait("Categoria", "Vendas - Pedido")]
         public void AdicionarItemPedido_UnidadesItemAcimaDoPermitido_DeveRetornarException()
         {
             var pedido = Pedido.PedidoFactory.NovoPedidoRascunho(Guid.NewGuid());
@@ -46,6 +46,19 @@ namespace NerdStore.Vendas.Domain.Tests
             var pedidoItem = new PedidoItem(produtoId, "Produto Teste", Pedido.MAX_UNIDADES_ITEM + 1, 100);
 
             Assert.Throws<DomainException>(() => pedido.AdicionarItem(pedidoItem));
+        }
+
+        [Fact(DisplayName = "Adicionar Item Pedido existente acima do permitido")]
+        [Trait("Categoria", "Vendas - Pedido")]
+        public void AdicionarItemPedido_ItemExixtenteSomaUnidadesAcimaDoPermitido_DeveRetornarException()
+        {
+            var pedido = Pedido.PedidoFactory.NovoPedidoRascunho(Guid.NewGuid());
+            var produtoId = Guid.NewGuid();
+            var pedidoItem = new PedidoItem(produtoId, "Produto Teste", 1, 100);
+            var pedidoItem2 = new PedidoItem(produtoId, "Produto Teste", Pedido.MAX_UNIDADES_ITEM, 100);
+            pedido.AdicionarItem(pedidoItem);
+
+            Assert.Throws<DomainException>(() => pedido.AdicionarItem(pedidoItem2));
         }
     }
 }
