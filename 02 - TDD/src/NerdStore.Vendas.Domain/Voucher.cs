@@ -90,10 +90,4 @@ namespace NerdStore.Vendas.Domain
             return dataValidade >= DateTime.Now;
         }
     }
-
-    public enum TipoDescontoVoucher
-    {
-        Porcentagem = 0,
-        Valor = 1
-    }
 }
