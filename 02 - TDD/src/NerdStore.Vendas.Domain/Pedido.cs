@@ -76,9 +76,11 @@ namespace NerdStore.Vendas.Domain
             if (!PedidoItemExistente(pedidoItem)) throw new DomainException("O item não existe no pedido");
         }
 
-        public void TornarRascunho()
+        public void RemoverItem(PedidoItem pedidoItem)
         {
-            PedidoStatus = PedidoStatus.Rascunho;
+            ValidarPedidoItemInexistente(pedidoItem);
+            _pedidoItems.Remove(pedidoItem);
+            CalcularValorPedido();
         }
 
         public  static class PedidoFactory
@@ -93,6 +95,11 @@ namespace NerdStore.Vendas.Domain
                 pedido.TornarRascunho();
                 return pedido;
             }
+        }
+
+        public void TornarRascunho()
+        {
+            PedidoStatus = PedidoStatus.Rascunho;
         }
     }
 
