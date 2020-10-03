@@ -146,5 +146,68 @@ namespace NerdStore.Vendas.Domain.Tests
 
             Assert.Equal(totalPedido, pedido.ValorTotal);
         }
+
+        [Fact(DisplayName = "Aplicar Voucher Válido")]
+        [Trait("Categoria", "Vendas - Pedido")]
+        public void Pedido_AplicarVoucherValido_DeveRetornarSemErros()
+        {
+            var pedido = Pedido.PedidoFactory.NovoPedidoRascunho(Guid.NewGuid());
+            var voucher = new Voucher("Promo-15-Reais", null, 15, TipoDescontoVoucher.Valor,
+                1, DateTime.Now.AddDays(15), true, false);
+
+            var result = pedido.AplicarVoucher(voucher);
+
+           Assert.True(result.IsValid);
+        }
+
+        [Fact(DisplayName = "Aplicar Voucher Inválido")]
+        [Trait("Categoria", "Vendas - Pedido")]
+        public void Pedido_AplicarVoucherInvalido_DeveRetornarComErros()
+        {
+            var pedido = Pedido.PedidoFactory.NovoPedidoRascunho(Guid.NewGuid());
+            var voucher = new Voucher("Promo-15-Reais", null, 15, TipoDescontoVoucher.Valor,
+                1, DateTime.Now.AddDays(-1), true, true);
+
+            var result = pedido.AplicarVoucher(voucher);
+
+            Assert.False(result.IsValid);
+        }
+
+        [Fact(DisplayName = "Aplicar voucher tipo valor desconto")]
+        [Trait("Categoria", "Vendas - Pedido")]
+        public void AplicarVoucher_VoucherTipoValorDesconto_DeveDescontarDoValorTotal()
+        {
+            var pedido = Pedido.PedidoFactory.NovoPedidoRascunho(Guid.NewGuid());
+            var pedidoItem1 = new PedidoItem(Guid.NewGuid(), "Produto Xpto", 2, 200);
+            var pedidoItem2 = new PedidoItem(Guid.NewGuid(), "Produto Abcd", 8, 30);
+            pedido.AdicionarItem(pedidoItem1);
+            pedido.AdicionarItem(pedidoItem2);
+            var voucher = new Voucher("Promo-50-Reais", null,50, TipoDescontoVoucher.Valor,
+                1,DateTime.Now.AddDays(10), true, false);
+            var valorComDesconto = pedido.ValorTotal - voucher.ValorDesconto;
+
+            pedido.AplicarVoucher(voucher);
+
+            Assert.Equal(valorComDesconto, pedido.ValorTotal);
+        }
+
+        [Fact(DisplayName = "Aplicar voucher tipo percentual desconto")]
+        [Trait("Categoria", "Vendas - Pedido")]
+        public void AplicarVoucher_VoucherTipoPercentualDesconto_DeveDescontarDoValorTotal()
+        {
+            var pedido = Pedido.PedidoFactory.NovoPedidoRascunho(Guid.NewGuid());
+            var pedidoItem1 = new PedidoItem(Guid.NewGuid(), "Produto Xpto", 2, 200);
+            var pedidoItem2 = new PedidoItem(Guid.NewGuid(), "Produto Abcd", 8, 30);
+            pedido.AdicionarItem(pedidoItem1);
+            pedido.AdicionarItem(pedidoItem2);
+            var voucher = new Voucher("Promo-50-Reais", 30, null, TipoDescontoVoucher.Porcentagem,
+                1, DateTime.Now.AddDays(10), true, false);
+            var valorDesconto = (pedido.ValorTotal * voucher.PercentualDesconto) / 100;
+            var valorTotalComDesconto = pedido.ValorTotal - valorDesconto;
+
+            pedido.AplicarVoucher(voucher);
+
+            Assert.Equal(valorTotalComDesconto, pedido.ValorTotal);
+        }
     }
 }
