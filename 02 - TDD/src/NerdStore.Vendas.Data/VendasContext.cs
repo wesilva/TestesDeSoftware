@@ -48,5 +48,4 @@ namespace NerdStore.Vendas.Data
             await Task.WhenAll(tasks);
         } 
     }
-
 }
