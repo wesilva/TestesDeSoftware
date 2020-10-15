@@ -4,7 +4,7 @@
 	Para que eu possa comprá-lo posteriormente
 
 Cenário: Adicionar item com sucesso a um novo pedido
-Dado QUe um produto esteja na vitrine
+Dado Que um produto esteja na vitrine
 E Esteja disponível no estoque
 E O usuário esteja logado
 Quando O usuário adicionar uma unidade ao carrinho
@@ -12,14 +12,14 @@ Então O usuário será redireciondo ao resumo da compra
 E O valor total do pedido será exatamente o valor do item adicionado
 
 Cenário: Adicionar items acima do limite
-Dado QUe um produto esteja na vitrine
+Dado Que um produto esteja na vitrine
 E Esteja disponível no estoque
 E O usuário esteja logado
 Quando O usuário adicionar uma item acima da quantidade máxima permitida
 Então Receberá uma mensagem de erro mencionando que foi ultrapassada a quantidade limite
 
 Cenário: Adicionar item já existente no carrinho
-Dado QUe um produto esteja na vitrine
+Dado Que um produto esteja na vitrine
 E Esteja disponível no estoque
 E O usuário esteja logado
 E O mesmo produto já tenha sido adicionado ao carrinho anteriormente
@@ -29,7 +29,7 @@ E A quantidade de itens daquele produto terá sido acrescida em uma unidade a ma
 E O valor total do pedido será a multiplicação da quantidade de itens pelo valor unitário
 
 Cenário: Adicionar item já existente onde soma ultrapassa limite máximo
-Dado QUe um produto esteja na vitrine
+Dado Que um produto esteja na vitrine
 E Esteja disponível no estoque
 E O usuário esteja logado
 E O mesmo produto já tenha sido adicionado ao carrinho anteriormente
