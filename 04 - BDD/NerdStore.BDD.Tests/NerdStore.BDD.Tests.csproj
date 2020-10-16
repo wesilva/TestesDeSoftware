@@ -7,6 +7,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+		<PackageReference Include="selenium.support" Version="3.141.0" />
+		<PackageReference Include="selenium.webdriver" Version="3.141.0" />
 		<PackageReference Include="specflow" Version="3.4.14" />
 		<PackageReference Include="specflow.tools.msbuild.generation" Version="3.4.14" />
 		<PackageReference Include="specflow.xUnit" Version="3.4.14" />
