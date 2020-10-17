@@ -6,6 +6,8 @@
 
 
 	<ItemGroup>
+		<PackageReference Include="DotnetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.9" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
 		<PackageReference Include="selenium.support" Version="3.141.0" />
 		<PackageReference Include="selenium.webdriver" Version="3.141.0" />
@@ -14,6 +16,13 @@
 		<PackageReference Include="specflow.xUnit" Version="3.4.14" />
 		<PackageReference Include="xunit" Version="2.4.0" />
 		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <None Update="appsettings.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>
