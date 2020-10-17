@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using NerdStore.BDD.Tests.Config;
 using TechTalk.SpecFlow;
 
 namespace NerdStore.BDD.Tests.Pedido
@@ -10,8 +10,11 @@ namespace NerdStore.BDD.Tests.Pedido
         public void DadoQueUmProdutoEstejaNaVitrine()
         {
             // Arrange
-            var browser= new ChromeDriver("C:\\WebDriver\\");
-            browser.Navigate().GoToUrl("https://desenvolvedor.io");
+            var browser= new SeleniumHelper(Browser.Chrome, new ConfigurationHelper(), false);
+            browser.IrParaUrl("https://desenvolvedor.io");
+            browser.ClicarLinkPorTexto("Entrar");
+            browser.PreencherTextBoxPorId("Email", "abc@teste.com");
+            browser.PreencherTextBoxPorId("Password", "123456");
 
             // Act
 
