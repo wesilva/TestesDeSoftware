@@ -13,7 +13,7 @@ namespace NerdStore.Vendas.Data
     {
         private readonly IMediator _mediator;
 
-        protected VendasContext(DbContextOptions<VendasContext> options, IMediator mediator) 
+        public VendasContext(DbContextOptions<VendasContext> options, IMediator mediator) 
             : base(options)
         {
             _mediator = mediator;
