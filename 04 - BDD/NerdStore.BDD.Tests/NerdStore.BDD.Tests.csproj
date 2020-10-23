@@ -6,6 +6,7 @@
 
 
 	<ItemGroup>
+		<PackageReference Include="bogus" Version="31.0.3" />
 		<PackageReference Include="DotnetSeleniumExtras.WaitHelpers" Version="3.11.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.9" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />

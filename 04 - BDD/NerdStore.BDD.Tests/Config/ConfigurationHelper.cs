@@ -14,7 +14,7 @@ namespace NerdStore.BDD.Tests.Config
                 .Build();
         }
 
-        public string VitrineUrl => _config.GetSection("WebDrivers").Value;
+        public string VitrineUrl => _config.GetSection("VitrineUrl").Value;
         public string ProdutoUrl => $"{DomainUrl}{_config.GetSection("ProdutoUrl").Value}";
         public string CarrinhoUrl => $"{DomainUrl}{_config.GetSection("CarrinhoUrl").Value}";
         public string DomainUrl => _config.GetSection("DomainUrl").Value;
