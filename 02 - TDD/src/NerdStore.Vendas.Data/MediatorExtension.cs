@@ -22,10 +22,10 @@ namespace NerdStore.Vendas.Data
 
             var tasks = domainEvents
                 .Select(async (domainEvent) => {
-                    await mediator.Publish(domainEvents);
+                    await mediator.Publish(domainEvent);
                 });
 
             await Task.WhenAll(tasks);
-        } 
+        }
     }
 }

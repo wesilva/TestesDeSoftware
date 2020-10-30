@@ -1,7 +1,6 @@
 ﻿using System;
 using MediatR;
 using NerdStore.Core.Messages;
-using DateTime = System.DateTime;
 
 namespace NerdStore.Core.DomainObjects
 {
@@ -17,9 +16,9 @@ namespace NerdStore.Core.DomainObjects
         {
             Timestamp = DateTime.Now;
             DomainNotificationId = Guid.NewGuid();
+            Version = 1;
             Key = key;
             Value = value;
-            Version = 1;
         }
     }
 }

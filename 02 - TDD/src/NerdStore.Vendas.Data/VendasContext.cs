@@ -1,22 +1,23 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using NerdStore.Core.Data;
 using NerdStore.Core.Messages;
 using NerdStore.Vendas.Domain;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using MediatR;
 
 namespace NerdStore.Vendas.Data
 {
     public class VendasContext : DbContext, IUnitOfWork
     {
-        private readonly IMediator _mediator;
+        private readonly IMediator _mediatorHandler;
 
-        public VendasContext(DbContextOptions<VendasContext> options, IMediator mediator) 
+
+        public VendasContext(DbContextOptions<VendasContext> options, IMediator mediatorHandler)
             : base(options)
         {
-            _mediator = mediator;
+            _mediatorHandler = mediatorHandler;
         }
 
         public DbSet<Pedido> Pedidos { get; set; }
@@ -40,7 +41,7 @@ namespace NerdStore.Vendas.Data
             }
 
             var sucesso = await base.SaveChangesAsync() > 0;
-            if (sucesso) await _mediator.PublicarEventos(this);
+            if (sucesso) await _mediatorHandler.PublicarEventos(this);
 
             return sucesso;
         }
@@ -49,7 +50,7 @@ namespace NerdStore.Vendas.Data
         {
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(
                 e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
-                property.SetColumnType("varchar(100)");
+                property.Relational().ColumnType = "varchar(100)";
 
             modelBuilder.Ignore<Event>();
 

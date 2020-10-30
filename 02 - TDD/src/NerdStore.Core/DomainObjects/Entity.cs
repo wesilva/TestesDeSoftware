@@ -9,7 +9,6 @@ namespace NerdStore.Core.DomainObjects
         public Guid Id { get; set; }
 
         private List<Event> _notificacoes;
-
         public IReadOnlyCollection<Event> Notificacoes => _notificacoes?.AsReadOnly();
 
         protected Entity()

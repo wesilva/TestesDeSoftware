@@ -10,7 +10,7 @@ namespace NerdStore.Core.DomainObjects
         public DomainException(string message) : base(message)
         { }
 
-        public DomainException(string message, Exception innereException) : base(message, innereException)
+        public DomainException(string message, Exception innerException) : base(message, innerException)
         { }
     }
 }
