@@ -34,7 +34,7 @@ namespace NerdStore.WebApp.Tests.Config
             var clientOptions = new WebApplicationFactoryClientOptions
             {
                 AllowAutoRedirect = true,
-                BaseAddress = new Uri("http://localhost"),
+                BaseAddress = new Uri("http://localhost:5000/"),
                 HandleCookies = true,
                 MaxAutomaticRedirections = 7
             };
