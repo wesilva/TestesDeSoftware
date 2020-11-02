@@ -56,7 +56,7 @@ namespace NerdStore.Vendas.Application.Commands
             RuleFor(c => c.Quantidade)
                 .GreaterThan(0)
                 .WithMessage(QtdMinErroMsg)
-                .LessThan(Pedido.MAX_UNIDADES_ITEM)
+                .LessThanOrEqualTo(Pedido.MAX_UNIDADES_ITEM)
                 .WithMessage(QtdMaxErroMsg);
 
             RuleFor(c => c.ValorUnitario)

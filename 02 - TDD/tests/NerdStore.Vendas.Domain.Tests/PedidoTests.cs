@@ -53,7 +53,7 @@ namespace NerdStore.Vendas.Domain.Tests
 
         [Fact(DisplayName = "Adicionar Item Pedido existente acima do permitido")]
         [Trait("Categoria", "Vendas - Pedido")]
-        public void AdicionarItemPedido_ItemExixtenteSomaUnidadesAcimaDoPermitido_DeveRetornarException()
+        public void AdicionarItemPedido_ItemExistenteSomaUnidadesAcimaDoPermitido_DeveRetornarException()
         {
             var pedidoItem = new PedidoItem(_produtoId, "Produto Teste", 1, 100);
             var pedidoItem2 = new PedidoItem(_produtoId, "Produto Teste", Pedido.MAX_UNIDADES_ITEM, 100);
@@ -76,7 +76,7 @@ namespace NerdStore.Vendas.Domain.Tests
         [Trait("Categoria", "Vendas - Pedido")]
         public void AtualizarItemPedido_ItemValido_DeveAtualizarQuantidade()
         {
-            var pedidoItem = new PedidoItem(_produtoId, "Produto Teste", 2, 100);
+            var pedidoItem = new PedidoItem(_produtoId, "Produto Teste", 12, 100);
             _pedido.AdicionarItem(pedidoItem);
             var pedidoItemAtualizado = new PedidoItem(_produtoId, "Produto Teste", 5, 100);
             var novaQuantidade = pedidoItemAtualizado.Quantidade;
@@ -84,7 +84,6 @@ namespace NerdStore.Vendas.Domain.Tests
             _pedido.AtualizarItem(pedidoItemAtualizado);
 
             Assert.Equal(novaQuantidade, _pedido.PedidoItems.FirstOrDefault(p => p.ProdutoId == _produtoId).Quantidade);
-
         }
 
         [Fact(DisplayName = "Atualizar Item Pedido Validar Total")]

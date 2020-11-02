@@ -42,14 +42,24 @@ namespace NerdStore.Vendas.Application.Commands
             else
             {
                 var pedidoItemExistente = pedido.PedidoItemExistente(pedidoItem);
-                pedido.AdicionarItem(pedidoItem);
 
                 if (pedidoItemExistente)
                 {
+                    var itemExistente = pedido.ObterPedidoItem(pedidoItem.ProdutoId);
+                    var quantidadeItems = itemExistente.Quantidade + pedidoItem.Quantidade;
+
+                    if (quantidadeItems > Pedido.MAX_UNIDADES_ITEM)
+                    {
+                        await _mediator.Publish(new DomainNotification("pedidoCommandHandler", $"A quantidade máxima de um item é {Pedido.MAX_UNIDADES_ITEM}"), cancellationToken);
+                        return false;
+                    }
+
+                    pedido.AdicionarItem(pedidoItem);
                     _pedidoRepository.AtualizarItem(pedido.PedidoItems.FirstOrDefault(p => p.ProdutoId == pedidoItem.ProdutoId));
                 }
                 else
                 {
+                    pedido.AdicionarItem(pedidoItem);
                     _pedidoRepository.AdicionarItem(pedidoItem);
                 }
 

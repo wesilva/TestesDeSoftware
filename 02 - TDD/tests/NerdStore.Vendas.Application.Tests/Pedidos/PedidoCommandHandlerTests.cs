@@ -90,6 +90,28 @@ namespace NerdStore.Vendas.Application.Tests.Pedidos
             _mocker.GetMock<IPedidoRepository>().Verify(r => r.UnitOfWork.Commit(), Times.Once);
         }
 
+
+        [Fact(DisplayName = "Adicionar Item Existente ao Pedido Totalizando Quantidade Acima do Permitido")]
+        [Trait("Categoria", "Vendas - Pedido Command Handler")]
+        public async Task AdicionarItem_ItemExistenteAoPedidoRascunhoTotalizandoQuantidadeAcimaDoPermitido_DeveRetornarFalsoELancarEventosDeNotificacao()
+        {
+            // Arrange
+            var pedidoItemExistente = new PedidoItem(_produtoId, "Produto 1", 2, 100);
+            _pedido.AdicionarItem(pedidoItemExistente);
+
+            var pedidoCommand = new AdicionarItemPedidoCommand(_clienteId, _produtoId, "Produto 1", Pedido.MAX_UNIDADES_ITEM, 100);
+
+            _mocker.GetMock<IPedidoRepository>()
+                .Setup(r => r.ObterPedidoRascunhoPorClienteId(_clienteId)).Returns(Task.FromResult(_pedido));
+
+            // Act
+            var result = await _pedidoHandler.Handle(pedidoCommand, CancellationToken.None);
+
+            // Assert
+            Assert.False(result);
+            _mocker.GetMock<IMediator>().Verify(m => m.Publish(It.IsAny<INotification>(), CancellationToken.None), Times.Exactly(1));
+        }
+
         [Fact(DisplayName = "Adicionar Item Command Inválido")]
         [Trait("Categoria", "Vendas - Pedido Command Handler")]
         public async Task AdicionarItem_CommandInvalido_DeveRetornarFalsoELancarEventosDeNotificacao()
